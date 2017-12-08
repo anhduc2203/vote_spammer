@@ -12,7 +12,7 @@ skullbro = """ .-~~-.
   `--'"""
 
 def get_votes():
-    r = requests.get("https://ceo.cancun.com/profile/mila-kasanda-5a29fd45137da",
+    r = requests.get("",
             proxies=dict(
                 http='socks5://127.0.0.1:9050',
                 https='socks5://127.0.0.1:9050',
@@ -22,19 +22,8 @@ def get_votes():
     return soup.find(id="page-header-vote").span.text
 
 def submit_vote():
-    r = requests.post("https://ceo.cancun.com/profile/mila-kasanda-5a29fd45137da",
+    r = requests.post("",
             headers={
-                "Host": "ceo.cancun.com",
-                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:57.0) Gecko/20100101 Firefox/57.0",
-                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-                "Accept-Language": "en-US,en;q=0.5",
-                "Accept-Encoding": "gzip, deflate, br",
-                "Referer": "https://ceo.cancun.com/profile/mila-kasanda-5a29fd45137da",
-                "Content-Type": "application/x-www-form-urlencoded",
-                "Content-Length": "0",
-                "DNT": "1",
-                "Connection": "keep-alive",
-                "Upgrade-Insecure-Requests": "1"
             },
             proxies={
                 'http': 'socks5://127.0.0.1:9050',
