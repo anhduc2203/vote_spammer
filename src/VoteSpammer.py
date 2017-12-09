@@ -12,19 +12,34 @@ class VoteSpammer:
     stamp = None
     successful_request = False
     verbose = False
+    ip = None
 
     def __init__(self, config, verbose=False, stamp=None):
         self.config = config
         self.verbose = verbose
         self.stamp = stamp
+    
+    def get_ip(self):
+        ip = requests.get(
+                'http://ipinfo.io/ip',      
+                proxies=self.config['proxies']
+        ).text
+        if ip is None or ip is False: 
+            raise Exception("Bad IP: could not fetch IP")
+        return ip.strip()
 
     def get_votes(self):
         r = requests.get(
                 self.config['urls']['get_votes'], 
-                proxies=self.config['proxies']
+                proxies=self.config['proxies'],
+                stream=True
         )
+        fp = r.raw._fp.fp
+        sock = fp.raw._sock if hasattr(fp, 'raw') else fp._sock
+        self.ip = sock.getpeername()
+
         soup = BeautifulSoup(r.text, 'html.parser')
-        return soup.find(id="page-header-vote").span.text
+        return int(soup.find(id="page-header-vote").span.text)
 
     def submit_vote(self):
         r = requests.post(
@@ -52,4 +67,3 @@ class VoteSpammer:
             if self.stamp is not None: 
                 print self.stamp
         return self.successful_vote
-

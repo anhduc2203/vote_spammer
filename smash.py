@@ -1,8 +1,10 @@
-import yaml
 from src.VoteSpammer import VoteSpammer
 from src.Proxy import Proxy
 from random import randint
 from time import sleep
+import requests
+import sys
+import yaml
 
 config = yaml.load(open('./config.yml'), Loader=yaml.BaseLoader)
 
@@ -13,19 +15,30 @@ skullbro = """ .-~~-.
 
 vs = VoteSpammer(config, True, skullbro)
 proxy = Proxy()
+if len(sys.argv) > 1 and sys.argv[1] == 'purge':
+    proxy.purge_blocked_nodes()
+try:
+    while True:
+        for out in proxy.start_proxy():
+            print(out)
+            if "Bootstrapped 100%: Done" in out:
+                vs.start_vote()
+                
+                if vs.successful_vote:
+                    print "request went through!"
+                    proxy.block_node(vs.get_ip())
+                    sleeptime = randint(0,60)
+                    print "sleeping for: " + str(sleeptime) + "s"
+                    sleep(sleeptime)
+                else:
+                    print "error: trying again immediately"
+                
+                print "killing proxy and rotating IP"
+                proxy.kill_proxy()
 
-while True:
-    for out in proxy.start_proxy():
-        print(out)
-        if "Bootstrapped 100%: Done" in out:
-            vs.start_vote()
-            print "completely loaded; killing proxy"
-            proxy.kill_proxy()
-    if vs.successful_vote:
-        print "request went through!"
-        sleeptime = randint(0,60)
-        print "sleeping for: " + str(sleeptime) + "s"
-        sleep(sleeptime)
-    else:
-        print "error: trying again immediately"
+except KeyboardInterrupt:
+    proxy.kill_proxy()
 
+except Exception as e:
+    proxy.kill_proxy()
+    print e

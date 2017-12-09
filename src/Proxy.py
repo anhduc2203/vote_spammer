@@ -4,6 +4,11 @@ import subprocess
 
 class Proxy:
     process = None
+    conf = None
+    
+    def __init__(self):
+        my_dir = os.path.dirname(__file__)
+        self.conf = os.path.join(my_dir, '../.torrc')
 
     def start_proxy(self):
         cmd =  ["tor"]
@@ -22,4 +27,19 @@ class Proxy:
 
     def kill_proxy(self):
         os.killpg(os.getpgid(self.process.pid), signal.SIGTERM)
+    
+    def init_conf(self):
+        f = open(self.conf, 'w')
+        f.write('ExcludeExitNodes ')
+        f.close()
 
+    def block_node(self, node, purge=False):
+        if not os.path.exists(self.conf):
+            self.init_conf()
+        f = open(self.conf, 'a')
+        f.write(node)
+        f.write(" ")
+        f.close()
+    
+    def purge_blocked_nodes(self):
+        self.init_conf()
