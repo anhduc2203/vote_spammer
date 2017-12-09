@@ -38,7 +38,7 @@ class Proxy:
             self.init_conf()
         f = open(self.conf, 'a')
         f.write(node)
-        f.write(" ")
+        f.write(", ")
         f.close()
     
     def purge_blocked_nodes(self):
