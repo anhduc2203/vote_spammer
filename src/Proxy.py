@@ -11,7 +11,7 @@ class Proxy:
         self.conf = os.path.join(my_dir, '../.torrc')
 
     def start_proxy(self):
-        cmd =  ["tor"]
+        cmd =  'tor -f ' + self.conf
         self.process = subprocess.Popen(cmd,
                     stdout=subprocess.PIPE,
                     universal_newlines=True,
