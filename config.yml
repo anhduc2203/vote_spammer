@@ -1,7 +1,0 @@
-proxies:
-    http: 
-    https: 
-urls:
-    get_votes: 
-    post_vote: 
-post_vote_headers: 
