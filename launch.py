@@ -16,7 +16,11 @@ skullbro = """ .-~~-.
 vs = VoteSpammer(config, True, skullbro)
 proxy = Proxy()
 if len(sys.argv) > 1 and sys.argv[1] == 'purge':
-    proxy.purge_blocked_nodes()
+    answer = raw_input("are you sure you want to purge the nodes? (y/n) > ")
+    if answer.strip().lower() == "y":   
+        proxy.purge_blocked_nodes()
+    else:
+        exit()
 try:
     while True:
         for out in proxy.start_proxy():
