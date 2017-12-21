@@ -13,5 +13,5 @@ contestants = soup.find(id='page-item').findAll('div', recursive=False)
 for index, cont in enumerate(contestants):
     received_name = cont.div.div.a.span.span.text
     if (received_name.lower() == required_name.lower()):
-        print "\nName: {}\nPosition: {}\n".format(required_name, index)
+        print "\nName: {}\nPosition: {}\n".format(required_name, index+1)
         break
