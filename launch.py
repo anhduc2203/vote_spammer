@@ -21,8 +21,9 @@ if len(sys.argv) > 1 and sys.argv[1] == 'purge':
         proxy.purge_blocked_nodes()
     else:
         exit()
-try:
-    while True:
+
+while True:
+    try:
         for out in proxy.start_proxy():
             print(out)
             if "Bootstrapped 100%: Done" in out:
@@ -31,7 +32,7 @@ try:
                 if vs.successful_vote:
                     print "request went through!"
                     proxy.block_node(vs.get_ip())
-                    sleeptime = randint(0,60)
+                    sleeptime = randint(0,30)
                     print "sleeping for: " + str(sleeptime) + "s"
                     sleep(sleeptime)
                 else:
@@ -40,9 +41,10 @@ try:
                 print "killing proxy and rotating IP"
                 proxy.kill_proxy()
 
-except KeyboardInterrupt:
-    proxy.kill_proxy()
+    except KeyboardInterrupt:
+        proxy.kill_proxy()
+        exit()
 
-except Exception as e:
-    proxy.kill_proxy()
-    print e
+    except Exception as e:
+        proxy.kill_proxy()
+        print e
