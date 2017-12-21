@@ -30,3 +30,12 @@
 ### Is it worth it? 
 * I successfully procrastinated for 5 hours, so yeah, pretty darn worth it 
 * I also got the script to work, which is cool too
+
+##Updates:
+
+#### Update 1: Dec 21, 2017
+* Turns out the contest closes on the 24th, so we have extra time to spam!
+* We successfully reached the goal of 2000 votes, and surpassed it by an insane margin. 
+* Currently sitting at 4300+ votes
+* We managed to get our contestant into the top 100 as well! Great success
+
