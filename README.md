@@ -46,5 +46,5 @@
 * This means that the usual amount of daily spam does not advance our spot! It only keeps us from falling behind! 
 * Luckily for us, this limit is in the sweet range of spots 90-100 
 * For the last two days I go to bed with spot 94 in my grasp and wake up with spot 100 sliming its way into my life again 
-* I'm extremely happy to say I surpassed my goal by an incredibly large margin (likely due to beyond poor estimates)
+* I'm extremely happy to say I surpassed my goal by an incredibly large margin (likely due to beyond-poor estimates)
 
