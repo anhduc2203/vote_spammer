@@ -6,7 +6,7 @@
 * Their rank was determined by number of "votes" for their entry. At the time of writing, there are ~4, 000 contestants.
 * Every vote is electronic (through a web form)
 * Every vote is counted per IP Address, and is limited to 1 vote per day per IP address. 
-* Changing IPs _should_ get us another vote in the same day. 
+* Changing IPs _should_ get us another vote in the same day _(spoiler: it does)_
 
 ### Why
 * I wanted to see if I can find a way to break the voting system
@@ -31,11 +31,20 @@
 * I successfully procrastinated for 5 hours, so yeah, pretty darn worth it 
 * I also got the script to work, which is cool too
 
-##Updates:
+## Updates:
 
 #### Update 1: Dec 21, 2017
 * Turns out the contest closes on the 24th, so we have extra time to spam!
 * We successfully reached the goal of 2000 votes, and surpassed it by an insane margin. 
 * Currently sitting at 4300+ votes
 * We managed to get our contestant into the top 100 as well! Great success
+
+#### Update 2: Dec 22, 2017
+* Late night slammin through some code, snow gently burrying this quiet town, black sabbath blaring full blast through the headphones
+* It seems I've reached a sort of "soft limit" 
+* The rate at which I'm spamming votes seems to match my competition's 
+* This means that the usual amount of daily spam does not advance our spot! It only keeps us from falling behind! 
+* Luckily for us, this limit is in the sweet range of spots 90-100 
+* For the last two days I go to bed with spot 94 in my grasp and wake up with spot 100 sliming its way into my life again 
+* I'm extremely happy to say I surpassed my goal by an incredibly large margin (likely due to beyond poor estimates)
 
