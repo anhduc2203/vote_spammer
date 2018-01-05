@@ -58,4 +58,4 @@
 ### Final Thoughts
 * The spammer worked as planned, and I'm super happy with the results
 * We successfully beat 4000+ other contestants! 
-* It's still pretty unethical ¯\_(ツ)_/¯
+* It's still pretty unethical ¯\\_(ツ)_/¯
