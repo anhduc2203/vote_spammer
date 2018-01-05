@@ -48,3 +48,14 @@
 * For the last two days I go to bed with spot 94 in my grasp and wake up with spot 100 sliming its way into my life again 
 * I'm extremely happy to say I surpassed my goal by an incredibly large margin (likely due to beyond-poor estimates)
 
+#### Update 3: Jan 5, 2018
+* I waited until the new year to post this update so that I can include the status of our contestant
+* I was able to setup openvpn with PrivateInternetAccess and get whole new load of IPS 
+* The new system was able to push past the soft limit 
+* Contestant finished in the top ~80 (vague in order to discourage doxxing) 
+* Unfortunately, the organizers did not feel the submission was worthy of the next round
+
+### Final Thoughts
+* The spammer worked as planned, and I'm super happy with the results
+* We successfully beat 4000+ other contestants! 
+* It's still pretty unethical ¯\_(ツ)_/¯
